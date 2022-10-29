@@ -1,10 +1,10 @@
-import { BaseComponent } from "../../component";
+import { BaseComponent } from "../../component.js";
 
 export class ImageComponent extends BaseComponent<HTMLElement> {
     constructor(title: string, url: string) {
         super(`<section class="image">
                     <div class="image__holder"><img class="image__thumbnail"></div>
-                    <p class="image__title"></p>
+                    <h2 class="image__title"></h2>
                 </section>`);
 
         const imageElement = this.element.querySelector(".image__thumbnail")! as HTMLImageElement; // null이 아닌 걸 우리가 아니 image element로 캐스팅
