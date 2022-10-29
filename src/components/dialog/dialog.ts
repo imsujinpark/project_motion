@@ -4,6 +4,15 @@ import { Composable } from "../page/page.js";
 type OnCloseListener = () => void;
 type OnSubmitListener = () => void;
 
+export interface MediaData {
+    readonly title: string;
+    readonly url: string;
+}
+
+export interface TextData {
+    readonly title: string;
+    readonly body: string;
+}
 // closeListener와 submitListener를 외부로 전달 받아서 등록된 listener가 있다면 실행해줄 것
 export class InputDialog extends BaseComponent<HTMLElement> implements Composable {
     closeListener?: OnCloseListener;
