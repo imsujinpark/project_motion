@@ -19,7 +19,7 @@ export class VideoComponent extends BaseComponent<HTMLElement> {
     // 사용자가 copy embedded url 들고 오는 것 - https://www.youtube.com/embed/fCO7f0SmrDc
 
     private convertToEmbeddedURL = (url: string): string => {
-        const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:(?:youtube.com\/(?:(?:watch\?v=)|(?:embed\/))([a-zA-Z0-9-]{11}))|(?:youtu.be\/([a-zA-Z0-9-]{11})))/;
+        const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:(?:youtube.com\/(?:(?:watch\?v=)|(?:embed\/))([a-zA-Z0-9-_]{11}))|(?:youtu.be\/([a-zA-Z0-9-_]{11})))/;
         const match = url.match(regExp);
         console.log(match);
 

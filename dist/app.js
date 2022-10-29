@@ -6,7 +6,6 @@ import { PageComponent, PageItemComponent } from "./components/page/page.js";
 import { InputDialog } from "./components/dialog/dialog.js";
 import { MediaSectionInput } from "./components/dialog/input/media-input.js";
 import { TextSectionInput } from "./components/dialog/input/text-input.js";
-
 class App {
     constructor(appRoot, dialogRoot) {
         this.dialogRoot = dialogRoot;
@@ -16,6 +15,14 @@ class App {
         this.bindElementToDialog("#new-video", MediaSectionInput, (input) => new VideoComponent(input.title, input.url));
         this.bindElementToDialog("#new-note", TextSectionInput, (input) => new NoteComponent(input.title, input.body));
         this.bindElementToDialog("#new-todo", TextSectionInput, (input) => new TodoComponent(input.title, input.body));
+        this.page.addChild(new ImageComponent("Cool Picture", "https://picsum.photos/600/300"));
+        this.page.addChild(new VideoComponent("New song!", "https://www.youtube.com/embed/fCO7f0SmrDc"));
+        this.page.addChild(new NoteComponent("Note for Spanish Class", "Hola, me llamo Oscar :)"));
+        this.page.addChild(new TodoComponent("Shopping List", "Blue Cheese"));
+        this.page.addChild(new ImageComponent("Nice Picture", "https://picsum.photos/600/300"));
+        this.page.addChild(new VideoComponent("Itaewon Halloween!", "youtube.com/watch?v=ZZLTZd0l_RA"));
+        this.page.addChild(new NoteComponent("Note for TypeScript", "OOP is difficult"));
+        this.page.addChild(new TodoComponent("To-Do List", "Don't forget to commit!"));
     }
     bindElementToDialog(selector, InputComponent, makeSection) {
         const element = document.querySelector(selector);
