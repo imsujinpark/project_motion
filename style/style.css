@@ -275,3 +275,10 @@
   padding: 1em;
   color: var(--smokywhite);
 }
+
+/*  ---- Drag and Drop ---- */
+
+.mute-children * {
+  /* best way는 아니지만 제일 간단한 방법*/
+  pointer-events: none;
+}
